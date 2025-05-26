@@ -1,0 +1,46 @@
+services:
+  db:
+    image: studentroauis/pfs-db:v1
+    container_name: pfs_database
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=adminPostgres
+      - POSTGRES_DB=not_an_ebook
+    networks:
+      - pfs_network
+    ports:
+      - 5432:5432 
+
+  backend:
+    image: studentroauis/pfs-back:v1
+    container_name: pfs_backend
+    environment:
+      - DB_HOST=pfs_database
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASS=adminPostgres
+      - CLOUD_NAME=dqqz93inr
+      - CLOUD_API_KEY=651365279725395
+      - CLOUD_API_SECRET=VZUT8hrqCiZcLQ3NUyo2Mg8vcqc
+    networks:
+      - pfs_network
+    depends_on:
+      - db
+    ports:
+      - 8081:8081
+  
+  frontend:
+    image: studentroauis/pfs-front:v1
+    container_name: pfs_frontend
+    environment:
+      - DEPLOY_TYPE=docker
+      - BACKEND_HOST=localhost
+      - BACKEND_PORT=8081
+    networks:
+      - pfs_network
+    ports:
+      - 4200:80
+
+networks:
+  pfs_network:
+    driver: bridge
