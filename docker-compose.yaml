@@ -9,14 +9,14 @@ services:
     networks:
       - pfs_network
     ports:
-      - 5432:5432 
+      - 5435:5432 
 
   backend:
     image: studentroauis/pfs-back:v1
     container_name: pfs_backend
     environment:
       - DB_HOST=pfs_database
-      - DB_PORT=5432
+      - DB_PORT=5435
       - DB_USER=postgres
       - DB_PASS=adminPostgres
       - CLOUD_NAME=dqqz93inr
