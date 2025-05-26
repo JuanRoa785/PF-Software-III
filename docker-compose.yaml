@@ -16,7 +16,7 @@ services:
     container_name: pfs_backend
     environment:
       - DB_HOST=pfs_database
-      - DB_PORT=5435
+      - DB_PORT=5432
       - DB_USER=postgres
       - DB_PASS=adminPostgres
       - CLOUD_NAME=dqqz93inr
