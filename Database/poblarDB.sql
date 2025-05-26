@@ -1,3 +1,114 @@
+CREATE TABLE public.tipo_usuario (
+	id serial8 NOT NULL,
+	nombre varchar(100) NOT NULL,
+	descripcion varchar(200) NULL,
+	CONSTRAINT tipo_usuario_pk PRIMARY KEY (id)
+);
+
+CREATE TABLE public.usuario (
+	id serial8 NOT NULL,
+	id_tipo_usuario int8 NOT NULL DEFAULT 2, -- Por default será un cliente
+	correo varchar(250) UNIQUE NOT NULL,
+	contrasena varchar(200) NOT NULL,
+	nombres varchar(150) NOT NULL,
+	apellidos varchar(150) NOT NULL,
+	telefono varchar(15) NOT NULL,
+	cuenta_activa boolean NOT NULL DEFAULT TRUE, -- Para gestionar el estado de la cuenta
+	CONSTRAINT usuario_pk PRIMARY KEY (id),
+	CONSTRAINT usuario_tipo_usuario_fk FOREIGN KEY (id_tipo_usuario) REFERENCES public.tipo_usuario (id)
+);
+
+CREATE TABLE public.tarjeta_credito (
+    id serial PRIMARY KEY,
+    id_usuario int8 NOT NULL,
+    numero_tarjeta varchar(25) NOT NULL,   -- El número de la tarjeta (enmascarado o cifrado)
+    fecha_expiracion date NOT NULL,
+    nombre_titular varchar(255) NOT NULL,  -- Nombre del titular (enmascarado o cifrado)
+    tipo_tarjeta varchar(50) NOT NULL,     -- Tipo de tarjeta (Visa, MasterCard, etc.)
+    CONSTRAINT fk_usuario FOREIGN KEY (id_usuario) REFERENCES public.usuario(id)
+);
+
+CREATE TABLE public.direccion (
+	id serial8 NOT NULL,
+	id_usuario int8 NOT NULL,
+	pais varchar(100) NOT NULL,
+	region varchar(100) NOT NULL,
+	ciudad varchar(100) NOT NULL,
+	codigo_postal varchar(100) NOT NULL,
+	direccion varchar(250) NOT NULL,
+	CONSTRAINT direccion_pk PRIMARY KEY (id),
+	CONSTRAINT direccion_usuario_fk FOREIGN KEY (id_usuario) REFERENCES public.usuario (id)
+);
+
+CREATE TABLE public.genero_literario (
+	id serial8 NOT NULL,
+	nombre varchar(100) NOT NULL,
+	portada varchar(1000) NOT NULL,
+	descripcion varchar(200) NULL,
+	CONSTRAINT genero_literario_pk PRIMARY KEY (id)
+);
+
+CREATE TABLE public.libro (
+	id serial8 NOT NULL,
+	id_genero_literario int8 NOT NULL,
+	nombre varchar(100) NOT NULL,
+	sinopsis text NOT NULL,
+	id_portada varchar(250) NOT NULL, -- ID de la imagen cargada en Cloudinary
+	portada varchar(1000) NOT NULL, -- URL de la imagen almacenada en Cloudinary
+	precio numeric(15, 2) NOT NULL,
+	impuesto numeric(10, 9) NOT NULL,
+	stock int4 NOT NULL,
+	autor varchar(255) NOT NULL,
+	editorial varchar(255) NOT NULL,
+	edicion varchar(200) NOT NULL,
+	fecha_publicacion date NOT NULL,
+	idioma varchar(100) NOT NULL,
+	numero_paginas int4 NOT NULL,
+	dimensiones varchar(100) NULL,
+	coleccion varchar(100) NULL,
+	CONSTRAINT libro_pk PRIMARY KEY (id),
+	CONSTRAINT libro_genero_literario_fk FOREIGN KEY (id_genero_literario) REFERENCES public.genero_literario (id)
+);
+
+CREATE TABLE public.carrito (
+	id serial8 NOT NULL,
+	id_usuario int8 NOT NULL,
+	total numeric(18, 2) NOT NULL,
+	CONSTRAINT carrito_pk PRIMARY KEY (id),
+	CONSTRAINT carrito_usuario_fk FOREIGN KEY (id_usuario) REFERENCES public.usuario (id)
+);
+
+CREATE TABLE public.detalle_carrito (
+	id serial8 NOT NULL,
+	id_carrito int8 NOT NULL,
+	id_libro int8 NOT NULL,
+	cantidad int4 NOT NULL,
+	CONSTRAINT detalle_carrito_pk PRIMARY KEY (id),
+	CONSTRAINT detalle_carrito_carrito_fk FOREIGN KEY (id_carrito) REFERENCES public.carrito (id),
+	CONSTRAINT detalle_carrito_libro_fk FOREIGN KEY (id_libro) REFERENCES public.libro (id)
+);
+
+CREATE TABLE public.venta (
+	id serial8 NOT NULL,
+	id_usuario int8 NOT NULL,
+	fecha date NOT NULL,
+	observaciones varchar(255) NULL,
+	total numeric(18, 2) NOT NULL,
+	direccion varchar(700) NOT NULL,
+	CONSTRAINT venta_pk PRIMARY KEY (id),
+	CONSTRAINT venta_usuario_fk FOREIGN KEY (id_usuario) REFERENCES public.usuario (id)
+);
+
+CREATE TABLE public.detalle_venta (
+	id serial8 NOT NULL,
+	id_venta int8 NOT NULL,
+	id_libro int8 NOT NULL,
+	cantidad int4 NOT NULL,
+	CONSTRAINT detalle_venta_pk PRIMARY KEY (id),
+	CONSTRAINT detalle_venta_venta_fk FOREIGN KEY (id_venta) REFERENCES public.venta (id),
+	CONSTRAINT detalle_venta_libro_fk FOREIGN KEY (id_libro) REFERENCES public.libro (id)
+);
+
 INSERT INTO public.tipo_usuario (nombre, descripcion)
 VALUES 
 ('Gerente', 'Puede hacer CRUD de los libros, revisar el inventario y consultar las ventas realizadas'),
