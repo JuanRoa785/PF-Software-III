@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pfs-front-deployment
+  labels:
+    app: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels: 
+        app: frontend
+    spec: 
+      containers:
+      - name: pfs-front
+        image: studentroauis/pfs-front:v1
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 80
+        env:
+          - name: DEPLOY_TYPE
+            value: kubernetes
+          - name: API_URL
+            value: "http://backend.local"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pfs-front-out-service
+spec:
+  type: NodePort
+  selector:
+    app: frontend
+  ports:
+    - protocol: TCP
+      port: 4200
+      targetPort: 80
+      nodePort: 30420

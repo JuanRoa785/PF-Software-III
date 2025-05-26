@@ -24,7 +24,7 @@ COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
 
 #Se definen las variables de entorno
-ENV DEPLOY_TYPE=docker
+#ENV DEPLOY_TYPE=docker
 ENV BACKEND_HOST=localhost
 ENV BACKEND_PORT=8081
 

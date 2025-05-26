@@ -26,9 +26,9 @@ ENV DB_HOST=localhost
 ENV DB_PORT=5432
 ENV DB_USER=postgres
 ENV DB_PASS=adminPostgres
-ENV CLOUD_NAME=SECRET_VALUE_HERE
-ENV CLOUD_API_KEY=SECRET_VALUE_HERE
-ENV CLOUD_API_SECRET=SECRET_VALUE_HERE
+ENV CLOUD_NAME=dqqz93inr
+ENV CLOUD_API_KEY=651365279725395
+ENV CLOUD_API_SECRET=VZUT8hrqCiZcLQ3NUyo2Mg8vcqc
 
 # Copia el jar ejecutable de la imagen auxiliar alias mavn
 COPY  --from=maven /usr/local/app/target/Biblioteca-0.0.1-SNAPSHOT.jar /usr/share/biblioteca.jar
