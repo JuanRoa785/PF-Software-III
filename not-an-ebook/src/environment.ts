@@ -1,3 +1,3 @@
 export const environment = {
-  Url: 'http://localhost:8081'
+  Url: (window as any).API_URL
 };
