@@ -1,0 +1,49 @@
+<div class="content container-fluid">
+    <div class="row justify-content-center d-flex">
+        <div class="col-md-3"  style="margin: 30px 5px">
+            <p id="editoriales-title" style="font-weight: 600;">EDITORIALES</p>
+            <div id="div-checkboxes2" style="display: flex; flex-direction: column; gap: 8px;">
+                <label *ngFor="let editorial of editoriales">
+                <input type="checkbox" (change)="updateEditorialesSelected(editorial)" [checked]="editorial.checked" class="popular-tag"> {{ editorial.nombre }} </label>
+            </div>
+        </div>
+
+        <div class="col-md-7 justify-content-end align-items: center;" id="page-content">
+            <div id="container" style="margin-left: 15px; margin-right: 15px;">
+                <div class="row d-flex mt-3 mb-1">
+                    <div class="col-md-6 mb-1 d-flex align-items-center">
+                        <p class="mb-0 me-2" style="font-size: 15px; font-weight: 600;">Publicación:</p>
+                        <select class="form-select" id="select-orden" [(ngModel)]="selectedSortFecha" (change)="getLibrosFiltrados()" >
+                            <option value="1">Reciente</option>
+                            <option value="2">Antigua</option>
+                        </select>
+
+                        <p class="mb-0 ml-3 mr-3" style="font-size: 15px; font-weight: 600; margin-left: 10px;">Géneros:</p>
+                        <select class="form-select" id="select-genero-inventario" [(ngModel)]="selectedGenero" (change)="getLibrosFiltrados()">
+                            <option value="">Todos</option>
+                            <option *ngFor="let genero of this.generosLiterarios" [value]="genero.nombre">
+                                {{ genero.nombre }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="div-busqueda-libros" class="row d-flex mt-3 mb-3 justify-content-center">
+                    <div *ngFor="let libro of paginatedLibros" style="margin-left: 20px; width: fit-content; padding: 0px;">
+                        <app-card-libro [libro]=libro style="display: inline; width: fit-content;"></app-card-libro>
+                    </div>
+                </div>
+ 
+                <div class="text-center" *ngIf="librosFiltrados.length === 0">
+                    <img src="NoProducts.png" alt="No Products Found" class="img-fluid">
+                </div>
+
+
+                <ngb-pagination class="d-flex justify-content-center paginator" [(page)]="currentPage"
+                [pageSize]="itemsPerPage" [collectionSize]="librosFiltrados.length" (pageChange)="onPageChange($event)"
+                aria-label="Default pagination">
+                </ngb-pagination>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+<div id="container">
+    <p style="font-size: 20; font-weight: 600;">
+        <i (click)="redirectTo()" class="bi bi-arrow-left"
+            style="font-size: 20px; margin-right: 5px; margin-left: 5px;"></i>
+        DETALLE PEDIDO
+    </p>
+
+    <div style="width: 100%; border-bottom: 1px solid rgb(214, 212, 212); margin-bottom: 5px;"></div>
+
+    <div class="align-items-center d-flex" id="orderData">
+        <div class="col-6">
+            <p style="font-size: 20px;">ID Orden: {{orden.id}}</p>
+            <p> <b>{{ orden.detalleVenta.length }}</b> {{ orden.detalleVenta.length === 1 ? 'Libro' : 'Libros' }} -
+                Orden realizada el <b>{{formatDate(orden.fecha)[0]}}</b> a las <b>{{formatDate(orden.fecha)[1]}}</b>
+            </p>
+            <p>Vendido a: <b>{{orden.usuario.nombres}} {{orden.usuario.apellidos}}</b></p>
+        </div>
+
+        <div class="col-6" style="font-size: 25px;">
+            <span style="margin-left: 10px;">Total =</span> <span
+                style="color: #2DA5F3; font-weight: 600; margin-right: 8px;"> COP ${{formatTotal()}}</span>
+        </div>
+    </div>
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">LIBROS</th>
+                <th scope="col">$ CON IMPUESTOS</th>
+                <th scope="col">CANTIDAD</th>
+                <th scope="col">SUB-TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let detalle of orden.detalleVenta">
+                <td style="display: flex; align-items: center;">
+                    <div style="height: 75px; justify-content: center; display: flex; margin-left: 30px;">
+                        <img src="{{detalle.libro.portada}}" alt="product.img"
+                            style="width: 75px; margin-right: 10px; object-fit: contain;">
+                    </div>
+                    <div style="flex: 1; text-align: left;">
+                        <span style="display: inline-block;">{{ detalle.libro.nombre }}</span>
+                    </div>
+                </td>
+                <td>COP ${{getPrecioImpuesto(detalle.libro)}}</td>
+                <td>x{{detalle.cantidad}}</td>
+                <td>
+                    <b style="font-weight: 600;"> COP ${{ getSubTotalLibro(detalle) }} </b>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="" id="BillingInfo">
+        <p style="font-size: 18px; font-weight: 600; margin: 5px; text-align: left;"> Dirección de Envio</p>
+        <div style="width: 100%; border-bottom: 1px solid rgb(214, 212, 212); margin-bottom: 5px;"></div>
+        <p><b>Pais: </b>{{formatAdress()[0]}}</p>
+        <p><b>Region/Estado: </b>{{formatAdress()[1]}}</p>
+        <p><b>Ciudad: </b>{{formatAdress()[2]}}</p>
+        <p><b>Codigo Postal: </b>{{formatAdress()[3]}}</p>
+        <p><b>Direccion: </b>{{formatAdress()[4]}}</p>
+    </div>
+</div>

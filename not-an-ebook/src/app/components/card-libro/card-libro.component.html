@@ -1,0 +1,111 @@
+<div class="card">
+    <img src={{this.libro.portada}} class="book-cover-img" alt="Portada Libro" (click)="openInfoModal(modal)" ngSrcNoIntrinsicSize>
+    <div class="card-body">
+        <div class="col-12">
+            <div class="modal-trigger" (click)="openInfoModal(modal)">
+                <div class="row align-items-center">
+                    <p class="title">{{this.libro.nombre}}</p>
+                </div>
+
+                <div class="row">
+                    <p class="price">COP ${{this.getTotalPrice(libro.precio, libro.impuesto)}}</p>
+                </div>
+            </div>
+
+            <div class="quantity">
+                <button id="minus-quantity-card" (click)="disminuirCantidad()">—</button>
+                <p>Cantidad: {{this.cantidadComprar}}</p>
+                <button id="plus-quantity-card" (click)="aumentarCantidad()">+</button>
+            </div>
+
+            <div class="row-buttons">
+                <button (click)="iniciarCompra('carrito')" id="book-card-red-cart" class="book-card-redirects"><i class="bi bi-cart fs-4"></i></button>
+                <button (click)="iniciarCompra('checkout')" class="book-card-redirects"><i class="bi bi-credit-card-fill fs-4"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #modal let-modal>
+    <div class="modal-body">
+        <div class="d-flex justify-content-end">
+            <button type="button" class="btn btn-danger" (click)="closeInfoModal()">X</button>
+        </div>
+        <div class="row" style="margin-right: 10px;">
+            <!-- Columna Izquierda con imagen -->
+            <div class="col-md-4" id="left-detail-column">
+                <div id="img-container">
+                    <img src={{this.libro.portada}} alt="portada Libro" ngSrcNoIntrinsicSize>
+                </div>
+            </div>
+
+            <!-- Columna Derecha con detalles -->
+            <div class="col-md-8" >
+                <h4 style="font-weight: 600; text-align: center;">{{libro.nombre}}</h4>
+                <div class="row">
+                    <div class="col">
+                        <p>Fecha:</p>
+                        <p style="font-weight: 600">{{libro.fecha_publicacion.slice(0,10)}}</p>
+                    </div>
+                    <div class="col">
+                        <p>Estado:</p>
+                        <p style="font-weight: 600" [style.color]="getStock().color">
+                            {{ getStock().nombre }}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <p>Autor:</p>
+                        <p style="font-weight: 600">{{libro.autor}}</p>
+                    </div>
+                    <div class="col">
+                        <p>Género:</p>
+                        <p style="font-weight: 600; text-align: center;">{{libro.generoLiterario.nombre}}</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <p style="margin: 0px;">Editorial:</p>
+                        <p style="font-weight: 600; text-align: center;">{{libro.editorial}}</p>
+                    </div>
+                    <div class="col">
+                        <p>Edición:</p>
+                        <p style="font-weight: 600">{{libro.edicion}}</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: center; margin-top: 10px;">
+                    <h5 style="display: inline; font-weight: 600; margin-right: 5px;">Precio:</h5>
+                    <h5 style="color: #2DA5F3; font-weight: 600; display: inline;">COP ${{this.getTotalPrice(libro.precio, libro.impuesto)}}</h5>
+                </div>
+
+                <div class="row" style="margin-left: 15px; margin-top: 0px;">
+                    <h5 style="font-weight: 600; margin-bottom: 2px;">Sinopsis:</h5>
+                    <p [innerHTML]="formatearSinopsis(libro.sinopsis)" style="text-align: justify; font-size: 15px;"></p>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="quantity">
+                            <button id="minus-quantity-modal" (click)="disminuirCantidad()">—</button>
+                            <p>x{{this.cantidadComprar}}</p>
+                            <button id="plus-quantity-modal" (click)="aumentarCantidad()">+</button>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <button (click)="iniciarCompra('carrito')" id="book-modal-red-cart" class="book-card-redirects"><i
+                            class="bi bi-cart fs-4"></i></button>
+                    </div>
+
+                    <div class="col">
+                        <button (click)="iniciarCompra('checkout')" class="book-card-redirects"><i class="bi bi-credit-card-fill fs-4"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

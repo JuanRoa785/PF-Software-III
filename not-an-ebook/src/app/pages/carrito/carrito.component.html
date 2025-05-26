@@ -1,0 +1,63 @@
+<div class="d-flex" id="container" style="margin-top: 25px;">
+    <div class="col-14" style="border-bottom: 0px;">
+        <p style="font-size: 18px; font-weight: 600; margin: 5px; text-align: center;">CARRITO DE COMPRAS</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">LIBRO</th>
+                    <th scope="col">IMPUESTO</th>
+                    <th scope="col">$ CON IMPUESTOS</th>
+                    <th scope="col">CANTIDAD</th>
+                    <th scope="col">SUB-TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let detalle of detalleCarrito">
+                    <td style="display: flex; align-items: center;">
+                        <button (click)="eliminarDetalle(detalle.id)"> <i class="bi bi-x-circle"></i></button>
+                        <div style="height: 75px; justify-content: center; display: flex;">
+                            <img src="{{detalle.libro.portada}}" alt="product.img" style="width: 75px !important; margin-right: 10px; object-fit: contain;">
+                        </div>
+                        <div style="flex: 1; text-align: center;">
+                            <span style="display: inline-block;">{{ detalle.libro.nombre }}</span>
+                        </div>
+                    </td>
+                    <td><b style="font-weight: 600;">{{ getImpuesto(detalle.libro) }}%</b></td>
+                    <td>COP ${{ getPrecioImpuesto(detalle.libro)}}</td>
+                    <td>
+                        <div class="quantity d-flex" >
+                            <button (click)="disminuirCantidad(detalle)" style="margin-right: 5px; width: 30px;"> — </button>
+                            <p> x{{detalle.cantidad}} </p>
+                            <button (click)="aumentarCantidad(detalle)" style="margin-left: 5px; width: 30px;"> + </button>
+                        </div>
+                    </td>
+                    <td>COP ${{ getSubTotalLibro(detalle)}}</td>
+                </tr>
+                <tr *ngIf="isLoading">
+                    <td colspan="6" style="text-align: center;">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <i id="spinning-loading-arrow" class="bi bi-arrow-repeat spin"></i>
+                            <span class="ms-2">Cargando...</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr *ngIf="!isLoading && detalleCarrito.length === 0">
+                    <td colspan="5" style="text-align: center;">No se encontraron libros</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="subtotal">
+        <p style="font-size: 18px; font-weight: 600; margin: 5px; text-align: center;"> Resumen Carrito</p>
+        <div style="width: 100%; border-bottom: 1px solid rgb(214, 212, 212); margin-bottom: 5px;"></div>
+        <p><b style="font-weight: 600;">Sub-Total: </b>COP ${{ subTotal }}</p>
+        <p><b style="font-weight: 600;">Envio: </b> Gratis </p>
+        <p><b style="font-weight: 600;">Descuento: </b> COP $0</p>
+        <div style="width: 100%; border-bottom: 1px solid rgb(214, 212, 212); margin-bottom: 5px;"></div>
+        <p> <b style="font-weight: 600;">Total: COP ${{ subTotal }}</b></p>
+        <div class="d-flex justify-content-center">
+            <button (click)="goCheckout()" class="res-button">PROCEDER AL CHECKOUT <i class="bi bi-arrow-right"></i></button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+<div id="container" style="margin-top: 25px; margin-left: 15px; margin-right: 15px; min-width: 555px;">
+    <p style="font-weight: 700;">INVENTARIO:</p>
+
+    <div style="width: 100%; border-bottom: 1px solid rgb(214, 212, 212); margin-bottom: 5px;"></div>
+
+    <div class="row d-flex mt-3 mb-1">
+        <div class="col-md-6 d-flex align-items-center">
+            <p class="mb-0" style="font-size: 14px; font-weight: 600;">Buscar por Título:</p>
+            <div class="input-group">
+                <input [(ngModel)]="tituloLibro" (change)="getLibrosFiltrados()" (keydown)="onKeydown($event)" type="search" id="buscador-inventario" class="form-control" />
+                <button (click)="getLibrosFiltrados()" id="btn-filter-inventory" type="button" class="btn">
+                    <i class="bi bi-search icon-large"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-6 d-flex align-items-center">
+            <p class="mb-0 me-2" style="font-size: 14px; font-weight: 600;">Géneros Literarios:</p>
+            <select [(ngModel)]="generoSelect" (change)="getLibrosFiltrados()" class="form-select" id="select-genero-inventario">
+                <option value="">Todos</option>
+                <option *ngFor="let genero of generos" [value]="genero.nombre" class="categorySelectOptions">
+                    {{ genero.nombre }}
+                </option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row mt-1 mb-3 justify-content-center">
+        <div class="col-auto">
+            <button (click)="editarLibros(0)" type="button" class="btn btn-success w-100" style="font-weight: 600;">
+                Añadir Libro
+            </button>
+        </div>
+    </div>
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">NOMBRE</th>
+                <th scope="col">GENERO</th>
+                <th scope="col">PRECIO COMPLETO</th>
+                <th scope="col">STOCK</th>
+                <th scope="col">EDITAR</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-inventario-body">
+            <tr *ngFor="let libro of paginatedBooks">
+                <td scope="row">{{ libro.id }}</td>
+                <td>{{ libro.nombre }}</td>
+                <td>{{libro.generoLiterario.nombre}}</td>
+                <td>COP ${{ getTotalPrice(libro.precio, libro.impuesto) }}</td>
+                <td>{{libro.stock}}</td>
+                <td>
+                    <button (click)="editarLibros(libro.id)" class="btn btn-sm btn-primary m-1">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button (click)="modalEliminarLibro(libro.id)" class="btn btn-sm btn-danger m-1">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </td>
+            </tr>
+            <tr *ngIf="isLoading">
+                <td colspan="6" style="text-align: center;">
+                  <div class="d-flex align-items-center justify-content-center">
+                    <i id="spinning-loading-arrow" class="bi bi-arrow-repeat spin"></i>
+                    <span class="ms-2">Loading...</span>
+                  </div>
+                </td>
+            </tr>
+            <tr *ngIf="!isLoading && libros.length === 0">
+                <td colspan="6" style="text-align: center">No se encontraron libros</td>
+            </tr>
+        </tbody>
+    </table>
+    <ngb-pagination class="d-flex justify-content-center paginator" [(page)]="currentPage" [pageSize]="itemsPerPage"
+        [collectionSize]="libros.length" (pageChange)="onPageChange($event)" aria-label="Default pagination">
+    </ngb-pagination>
+</div>

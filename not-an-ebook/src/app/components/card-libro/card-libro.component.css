@@ -1,0 +1,229 @@
+.book-cover-img {
+    object-fit: contain;
+    display: block;
+    padding: 5px;
+    height: 150px;
+}
+
+.book-cover-img:hover {
+    cursor: pointer;
+}
+
+.card {
+    width: 200px;
+    display: flex;
+    justify-items: center;
+    margin: 5px 0px;
+    padding: 0px;
+}
+
+.card-body:hover{
+    cursor: pointer;
+}
+
+.title {
+    display: -webkit-box;
+    min-height: 48px !important;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;        /* Número máximo de líneas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    text-align: center;
+    font-weight: 500;
+    margin: 0px; 
+    margin-bottom: 2px;   
+}
+
+.card-body {
+    padding: 10px;
+    padding-top: 0px;
+    padding-bottom: 5px;
+}
+
+.row-buttons {
+    display: flex; 
+    justify-content: space-evenly; 
+    gap: 15px;
+}
+
+.row > button, .row-buttons > button {
+    width: 90px;
+    background-color: #FA8232;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    border: 1px solid #FA8232;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 13px;
+}
+
+.price {
+    color: #2DA5F3; 
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    margin: 0px;
+    margin-bottom: 2px;
+}
+
+.quantity {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid gray;
+    border-right: 0px;
+    border-left: 0px;
+    width: fit-content;
+    height: 27px;
+    margin: 0px auto;
+    margin-bottom: 10px;
+}
+
+.quantity > p { 
+    padding: 0 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-weight: 500;
+}
+
+.quantity > button {
+    width: 30px;
+    height: 26px;
+    background-color: #FA8232;
+    color: white;
+    border: 1px solid gray;
+    border-top: 0px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.col > .quantity {
+    margin: 5px 10px;
+    width: 80%;
+    font-size: 18px;
+}
+
+.quantity > button:hover {
+    background-color: #1B6392;
+}
+
+.book-card-redirects:hover {
+    background-color: #1B6392 !important;
+    border: #1B6392 !important;
+}
+
+.book-card-redirects {
+    padding: 0px;
+    width: 30px;
+    height: 35px;
+    margin: 2px;
+}
+
+/* ESTILOS MODAL */
+.detail-modal-close{
+    background-color: #FA8232;
+    border: 1px solid black;
+    color: white;
+}
+
+.detail-modal-close:focus {
+    outline: none; /* Elimina el contorno (outline) */
+    box-shadow: none; /* Elimina cualquier sombra que pueda aparecer */
+}
+
+#modalContainer {
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+}
+
+#left-detail-column{
+    border-right: 1px solid black;
+}
+
+#img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#img-container > img {
+    width: 80%;
+    min-width: 200px;
+    Height: 400px;
+    object-fit: contain;
+    padding: 5px;
+    margin: 0 5px;
+}
+
+.col-md-6 > h6 {
+    text-align: center;
+}
+
+.col {
+    display: flex;
+    justify-content: center;
+}
+
+.col > p {
+    display: inline;
+    font-size: 18px;
+    margin: 0px 2.5px;
+}
+
+.col > button {
+    width: 100%;
+    background-color: #FA8232;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    border: 1px solid #FA8232;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 16px;
+}
+
+.col > button:hover {
+    background-color: #1B6392 !important;
+    border: 1px solid #1B6392 !important;
+}
+
+[libro-sinopsis] {
+    white-space: pre-line;
+}
+
+@media (max-width: 992px) {
+    #modalContainer {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    #img-container {
+        width: 100%; 
+        display: flex;
+        justify-content: center;
+    }
+
+    img {
+        max-width: 100%; 
+        height: auto; 
+    }
+
+    .col-md-4, .col-md-8 {
+        width: 100%; 
+    }
+
+    .row {
+        margin: 0; 
+    }
+
+    #left-detail-column{
+        border: 0px solid;
+    }
+}

@@ -1,0 +1,58 @@
+<div id="footer-content">
+    <div id="column-1">
+        <div id="icon">
+            <img type="image/x-png" src="icon.png" alt="TemporalIconFooter" width="35px"
+                style="display: inline; margin-right: 5px;">
+            <h5 style="display: inline; color: white;">Not An Ebook</h5>
+        </div>
+        <p style="color: #77878F; margin-bottom: 0px; margin-top: 5px; font-size: 12px;">Servicio al Cliente</p>
+        <p style="color: white; font-size: 16px; margin-bottom: 5px">(601) 918-8211</p>
+        <p style="color: #77878F; margin-bottom: 5px; font-size: 12px; width: 200px;">Cra 33 # 52-48. Bucaramanga,
+            Santander</p>
+        <p style="color: white; margin-bottom: 5px; font-size: 14px;">NotAnEbook&#64;contactme.com</p>
+    </div>
+
+    <div id="column-2">
+        <p style="color: white; margin-bottom: 5px; font-size: 14px;">GENEROS LITERARIOS </p>
+        <div id="links-generos-Literarios">
+            <div class="column">
+                <a *ngFor="let genero of generosCol1" (click)="searchByGenero(genero.nombre)">
+                    {{ genero.nombre }}
+                </a>
+            </div>
+            
+            <div class="column">
+                <a *ngFor="let genero of generosCol2" (click)="searchByGenero(genero.nombre)">
+                    {{ genero.nombre }}
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="column-3">
+        <p style="color: white; margin-bottom: 5px; font-size: 14px;">ENLACES RAPIDOS</p>
+        <a (click)="redirect('perfil')" id="a-profile">Perfil</a>
+        <a (click)="redirect('carrito')" id="a-cart">Carrito de Compras</a>
+        <a (click)="redirect('historial')" id="a-history">Historial de Compras</a>
+        <a (click)="searchByGenero('')" id="a-search">Buscar Libros</a>
+    </div>
+
+    <div id="column-5">
+        <p style="color: white; margin-bottom: 5px; font-size: 14px;">EDITORIALES POPULARES</p>
+        <div class="columns-wrap">
+            <div class="column">
+                <button class="popular-tag">Alfaguara</button>
+                <button class="popular-tag">Salamandra</button>
+                <button class="popular-tag">Booket</button>
+                <button class="popular-tag">Alianza</button>
+            </div>
+
+            <div class="column">
+                <button class="popular-tag">Planeta</button>
+                <button class="popular-tag">Debolsillo</button>
+                <button class="popular-tag">Minotauro</button>
+                <button class="popular-tag">Molino</button>
+            </div>
+        </div>
+    </div>
+</div>

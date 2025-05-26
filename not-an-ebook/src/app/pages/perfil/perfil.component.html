@@ -1,0 +1,69 @@
+<div id="container">
+    <div class="d-flex profile-row" style="justify-content: center;">
+        <div class="col-4" id="AccountInfo" style="margin-right: 20px;">
+            <p style="font-size: 18px; font-weight: 600; margin: 5px; text-align: center;"> Datos Personales</p>
+            <div style="width: 100%; border-bottom: 1px solid rgb(214, 212, 212); margin-bottom: 5px;"></div>
+            <p id="card-nombre"><b style="font-weight: 600;">Nombre: </b>{{user.nombres}} {{user.apellidos}}</p>
+            <p id="card-correo"><b style="font-weight: 600;">Correo: </b>{{user.email}}</p>
+            <p id="card-telefono"><b style="font-weight: 600;">Teléfono: </b>{{user.telefono}}</p>
+            <div class="d-flex justify-content-center">
+                <button (click)="openModalPerfil()" class="profile-button" data-bs-toggle="modal" data-bs-target="#modal-datos-personales">
+                    Editar Perfil
+                </button>
+            </div>
+        </div>
+
+        <div class="col-5" id="AccountInfo" style="margin-right: 20px;">
+            <p style="font-size: 18px; font-weight: 600; margin: 5px; text-align: center;"> Actualizar Contraseña
+            </p>
+            <div style="width: 100%; border-bottom: 1px solid rgb(214, 212, 212); margin-bottom: 5px;"></div>
+            <form>
+                <div class="mb-3">
+                    <p class="form-label"> Nueva Contraseña:</p>
+                    <div class="password-toggle" style="display: flex; align-items: center;">
+                        <input type="{{ isPasswordVisible ? 'text' : 'password' }}" [(ngModel)]="updPassword" class="form-control" name="password" id="card-password"
+                            placeholder="8+ Caracteres">
+                        <i (click)="togglePasswordsVisibility(true)" [ngClass]="isPasswordVisible ? 'bi-eye' : 'bi-eye-slash'" class="bi" style="cursor: pointer;" id="card-show-password-icon"></i>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <p class="form-label">Confirmar Nueva Contraseña:</p>
+
+                    <div class="password-toggle" style="display: flex; align-items: center;">
+                        <input type="{{ isRepeatPasswordVisible ? 'text' : 'password' }}" [(ngModel)]="updRepeatPassword" class="form-control" name="repeatPassword" id="card-repeat-password"
+                            placeholder="8+ Caracteres">
+                        <i (click)="togglePasswordsVisibility(false)" [ngClass]="isRepeatPasswordVisible ? 'bi-eye' : 'bi-eye-slash'" class="bi" style="cursor: pointer;" id="card-rep-show-password-icon"></i>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button (click)="actualizarContrasena()" id="btn-update-constrasena" type="button" class="profile-button">
+                        Actualizar Contraseña
+                    </button>
+                </div>
+                <div *ngIf="strError.length > 1" style="display: flex; justify-content: center; align-items: center;">
+                    <p id="direccion-error-general" class="mt-1" style="color: red; font-weight: 600; text-align: center;">
+                        {{strError}}
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="d-flex" style="justify-content: center;">
+        <div class="col-10" id="BillingInfo" style="margin-bottom: 0px;">
+            <p style="font-size: 18px; font-weight: 600; margin: 5px; text-align: center;"> Dirección de Envio</p>
+            <div style="width: 100%; border-bottom: 1px solid rgb(214, 212, 212); margin-bottom: 5px;"></div>
+            <p id="card-pais"><b style="font-weight: 600;">Pais: </b>{{direccion.pais}}</p>
+            <p id="card-region"><b style="font-weight: 600;">Region/Estado: </b>{{direccion.region}}</p>
+            <p id="card-ciudad"><b style="font-weight: 600;">Ciudad: </b>{{direccion.ciudad}}</p>
+            <p id="card-codigo-postal"><b style="font-weight: 600;">Codigo Postal: </b>{{direccion.codigo_postal}}</p>
+            <p id="card-direccion"><b style="font-weight: 600;">Dirección: </b>{{direccion.direccion}}</p>
+            <div class="d-flex justify-content-center" style="gap: 20px;">
+                <button (click)="openModalDireccion()" class="profile-button" data-bs-toggle="modal">
+                    Editar Dirección</button>
+                <button (click)="verifEliminarDireccion()" id="btn-delete-direccion" class="profile-button delete-button">Eliminar Dirección</button>
+            </div>
+        </div>
+    </div>
+</div>

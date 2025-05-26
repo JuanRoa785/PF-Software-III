@@ -1,0 +1,40 @@
+.card {
+    width: 600px;
+    height: fit-content;
+    align-self: top;
+    justify-content: center;
+}
+
+.nav-item {
+    font-weight: 600;
+}
+
+.nav-item:hover {
+    color: #FA8232;
+}
+
+.nav-item:active {
+    color: #FA8232;
+}
+
+#tabLeft {
+    border-left: 0px;
+    border-top: 0px;
+}
+
+#tabRight {
+    border-right: 0px;
+    border-top: 0px;
+}
+
+.nav-link {
+    color: black;
+    font-size: 20px;
+    text-align: center;
+}
+
+.nav-link.active {
+    color: #FA8232;
+}
+
+

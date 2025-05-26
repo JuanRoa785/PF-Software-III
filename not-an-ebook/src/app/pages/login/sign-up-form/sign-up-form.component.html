@@ -1,0 +1,99 @@
+<div id="register-form" style="padding: 10px;">
+    <form>
+        <div class="mb-3">
+            <p class="form-label">Nombres</p>
+            <input type="text" [(ngModel)]="regName" class="form-control" id="registro-nombre" name="regName" autocomplete="Default Name"
+                placeholder="Pepito">
+        </div>
+
+        <div class="mb-3">
+            <p class="form-label">Apellidos</p>
+            <input type="text" [(ngModel)]="regLastName" class="form-control" id="registro-apellido" name="regLastName" placeholder="Perez">
+        </div>
+
+        <div class="mb-3">
+            <p class="form-label">Teléfono</p>
+            <input type="string" [(ngModel)]="regTelefono" class="form-control" id="registro-telefono" placeholder="312 3456789"
+                name="regPhoneNumber">
+            <p *ngIf="regTelefono.length >0 && regTelefono.length <= 9" id="registro-error-telefono" style="color: red; font-weight: 600;">
+                * El teléfono celular solo debe tener 10 digitos *
+            </p>
+        </div>
+
+
+        <div class="mb-3">
+            <p class="form-label">Correo Electrónico</p>
+            <input type="email" [(ngModel)]="regCorreo" (ngModelChange)="verifEmail()" class="form-control" id="registro-email" placeholder="Digite su email aquí"
+                name="regEmail" autocomplete="email">
+            <p *ngIf="regCorreo.length >0 && isEmailValid==false" id="registro-error-email" style="color: red; font-weight: 600;">
+                * El correo electrónico es invalido *
+            </p>
+        </div>
+
+        <div class="mb-3">
+            <p class="form-label" style="display: block;">Contraseña</p>
+            <div class="password-toggle" style="display: flex; align-items: center;">
+                <input type="{{ isPasswordVisible ? 'text' : 'password' }}" [(ngModel)]="regPassword" 
+                class="form-control" name="password" id="registro-password"
+                    placeholder="8+ Caracteres">
+                <i class="bi" [ngClass]="isPasswordVisible ? 'bi-eye' : 'bi-eye-slash'" 
+                (click)="togglePasswordsVisibility(true)" style="cursor: pointer;" id="reg-show-password-icon"></i>
+            </div>
+
+            <p id="registro-error-password" *ngIf="regPassword.length >0 && regPassword.length <= 7" style="color: red; font-weight: 600;">
+                * La contraseña debe tener mas de 8 caracteres *
+            </p>
+        </div>
+
+        <div class="mb-3">
+            <p class="form-label" style="display: block;">Confirmar Contraseña</p>
+
+            <div class="password-toggle" style="display: flex; align-items: center;">
+                <input [(ngModel)]="regRepeatPassword" type="{{ isRepeatPasswordVisible ? 'text' : 'password' }}" class="form-control" name="password" id="registro-repeat-password"
+                    placeholder="8+ Caracteres">
+                <i class="bi" [ngClass]="isRepeatPasswordVisible ? 'bi-eye' : 'bi-eye-slash'" 
+                (click)="togglePasswordsVisibility(false)" style="cursor: pointer;" id="reg-rep-show-password-icon"></i>
+            </div>
+
+            <p *ngIf="regRepeatPassword.length > 0 && regRepeatPassword.length <= 7" style="color: red; font-weight: 600;">
+                * La contraseña debe tener más de 8 caracteres *
+            </p>
+            
+            <p *ngIf="regRepeatPassword.length > 0 && regRepeatPassword !== regPassword" style="color: red; font-weight: 600;">
+                * Las contraseñas no coinciden *
+            </p>
+        </div>
+
+        <div class="mb-3">
+            <div class="d-flex" style="justify-content: center; margin-bottom: 0px; margin-left: 2px; height: fit-content;">
+                <input id="registro-terminos" [(ngModel)]="isTerminosAceptados" class="form-check-input" type="checkbox"
+                    name="regCheck" />
+                <label class="form-check-label" style="display: inline; width: fit-content; padding-left: 5px;">
+                    ¿Aceptas los <a>Terminos, Condiciones</a> y las <a>Politicas de privacidad</a> de <b>Not An
+                        Ebook</b>?
+                </label>
+            </div>
+            <p *ngIf="!isTerminosAceptados" id="registro-terminos-error"
+                style="display: flex; color: red; font-weight: 600; margin-left: 15px; margin-top: 0px;">
+                * Por favor acepta los terminos y condiciones para continuar *
+            </p>
+        </div>
+
+        <button (click)="registrarse()" id="btn-registrarse" class="login-btn btn-primary" type="button"
+            style="width: 100%; margin-bottom: 10px;">
+            Registrarse
+        </button>
+
+        <div *ngIf="errorEspecifico.length > 1" style="display: flex; justify-content: center; align-items: center; margin-top: 5px;">
+            <p id="registro-error-general" style="color: red; font-weight: 600; margin-left: 15px;">
+            {{errorEspecifico}}
+            </p>
+        </div>
+
+        <div *ngIf="isLoading" id="registro-loading" class="d-flex" style="justify-content: center; align-items: center; margin: 15px 0 15px 0; padding: 0;">
+            <p class="loading-text">
+                <i id="spinning-loading-arrow" class="bi bi-arrow-repeat spin"></i> Cargando...
+            </p>
+        </div>
+    </form>
+</div>

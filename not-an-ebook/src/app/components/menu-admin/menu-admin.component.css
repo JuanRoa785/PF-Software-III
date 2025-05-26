@@ -1,0 +1,43 @@
+#page-menu {
+    width: 100vw;
+    flex: 1;    
+    display: flex;
+    justify-content: center;          
+}
+
+.nav {
+    border: 1px solid rgb(214, 212, 212);
+    box-shadow: 5px 5px 10px rgb(214, 212, 212);
+}
+
+a {
+    border-radius: 0px !important;
+    color: black;
+    font-weight: 600;
+}
+
+.active {
+    background-color: #FA8232 !important;
+}
+
+a:hover {
+    cursor: pointer;
+    background-color: #fdbd5d;
+    color:black
+}
+
+@media (max-width: 960px) {
+  #page-menu {
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .page-content {
+    width: 98vw !important;
+  }
+
+   .col-8 {
+    width: 100%;
+  }
+}

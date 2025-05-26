@@ -1,0 +1,51 @@
+<div class="modal-content">
+    <div class="modal-header d-flex justify-content-between align-items-center">
+        <h5 class="modal-title" id="titleModalLabel">
+            <b style="font-weight: 600;">Editar Dirección Envío</b>
+        </h5>
+        <button (click)="closeModal()" type="button" class="btn btn-danger">X</button>
+    </div>
+
+    <div class="modal-body">
+        <div class="mb-3">
+            <p class="form-label">Pais:</p>
+            <input [(ngModel)]="address.pais" type="text" class="form-control form-control-modal" id="modal-pais" placeholder="Colombia">
+        </div>
+
+        <div class="mb-3">
+            <p class="form-label">Region/Estado:</p>
+            <input [(ngModel)]="address.region" type="text" class="form-control form-control-modal" id="modal-region" name="region/State"
+                placeholder="Santander">
+        </div>
+
+        <div class="mb-3">
+            <p class="form-label">Ciudad:</p>
+            <input [(ngModel)]="address.ciudad" type="text" class="form-control form-control-modal" id="modal-ciudad" name="ciudad"
+                placeholder="Bucaramanga">
+        </div>
+
+        <div class="mb-3">
+            <p class="form-label">Codigo Postal:</p>
+            <input [(ngModel)]="address.codigo_postal" type="text" class="form-control form-control-modal" id="modal-codigo-postal" name="codigo postal"
+                placeholder="68001">
+        </div>
+
+        <div class="mb-3">
+            <p class="form-label">Dirección:</p>
+            <input [(ngModel)]="address.direccion" type="text" class="form-control form-control-modal" id="modal-valor-direccion" name="direccion"
+                placeholder="Cra 01 #01-01 Building Example - Apto 101">
+        </div>
+
+        <div class="d-flex justify-content-center" style="width: 100%;">
+            <button (click)="actualizarDireccion()" id="btn-update-direccion" type="button" class="btn btn-success"
+                style="font-weight: 600;">¡Actualizar Dirección de Envio!
+            </button>
+        </div>
+
+        <div *ngIf="strError.length > 1" style="display: flex; justify-content: center; align-items: center; margin-top: 5px;">
+            <p id="direccion-error-general" class="mt-1" style="color: red; font-weight: 600;">
+                {{strError}}
+            </p>
+        </div>
+    </div>
+</div>

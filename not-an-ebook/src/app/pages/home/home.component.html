@@ -1,0 +1,53 @@
+<div id="enlacesGenerosLiterarios">
+    <h5>Géneros Literarios</h5>
+
+    <div class="carousel-wrapper">
+        <button class="carousel-arrow left" (click)="carrusel.prev()">‹</button>
+
+        <ngb-carousel #carrusel [interval]="5000" [wrap]="true" [pauseOnHover]="true" [showNavigationArrows]="false" [showNavigationIndicators]="false">
+            <ng-template ngbSlide *ngIf="carruselMainSlide.length > 0">
+                <div class="d-flex justify-content-center flex-wrap gap-2 p-3">
+                    <div *ngFor="let genero of carruselMainSlide" class="card-generos">
+                        <button class="card" (click)="searchByGenero(genero.nombre)">
+                            <img [src]="genero.portada" class="card-img-top" alt="genero literario" width="135"
+                                height="190">
+                            <div class="card-body mt-1">
+                                <p class="card-text">{{ genero.nombre }}</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </ng-template>
+    
+            <ng-template ngbSlide *ngIf="carrusel2ndSlide.length">
+                <div class="d-flex justify-content-center flex-wrap gap-2 p-3">
+                    <div *ngFor="let genero of carrusel2ndSlide" class="card-generos">
+                        <button class="card" (click)="searchByGenero(genero.nombre)">
+                            <img [src]="genero.portada" class="card-img-top" alt="genero literario" width="135"
+                                height="190">
+                            <div class="card-body mt-1">
+                                <p class="card-text">{{ genero.nombre }}</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </ng-template>
+        </ngb-carousel>
+        
+        <button class="carousel-arrow right" (click)="carrusel.next()">›</button>
+    </div>
+
+<div id="latest-books" style="margin-bottom: 20px;">
+    <h5 style="margin-top: 0px; margin-bottom: 20px;">Ultimos Libros Publicados</h5>
+    <div class="row" style="display: flex; justify-content: space-evenly; margin-right: 20px;">
+        <div *ngFor="let libro of librosRow1" style="margin-left: 20px; width: fit-content; padding: 0px;">
+            <app-card-libro [libro] = libro style="display: inline; width: fit-content;"></app-card-libro>
+        </div>
+    </div>
+
+    <div class="row" style="display: flex; justify-content: space-evenly; margin-right: 20px;">
+        <div *ngFor="let libro of librosRow2" style="margin-left: 20px; width: fit-content; padding: 0px;">
+            <app-card-libro [libro] = libro style="display: inline; width: fit-content;"></app-card-libro>
+        </div>
+    </div>
+</div>

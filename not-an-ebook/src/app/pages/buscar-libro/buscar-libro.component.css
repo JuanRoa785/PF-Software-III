@@ -1,0 +1,62 @@
+.content {
+    width: 100vw;
+}
+
+#container {
+    margin-top: 25px;
+    margin-left: 15px;
+}
+
+#container > p {
+    margin: 5px;
+}
+
+.form-select {
+    border: 1px solid gray;
+    box-shadow: 2px 2px 2px gray;
+    color: black !important;
+}
+
+.form-select:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #FA8232; 
+    box-shadow: 2px 2px 2px #FA8232;
+}
+
+.form-select:hover {
+    border-color: #FA8232; 
+    box-shadow: 1px 1px 1px #FA8232;
+}
+
+.col-md-6 > .form-select{
+    margin-right: 10px; 
+    margin-left: 10px; 
+    width: fit-content;
+}
+
+#editoriales-title {
+    color: black; 
+    margin-bottom: 5px; 
+    font-size: 15px; 
+    font-weight: 500; 
+    text-align: left;
+}
+
+.card-row {
+    display: flex; 
+    justify-content: space-evenly; 
+    margin: 8px; 
+    gap: 12px;
+}
+
+#div-checkboxes {
+    width: 220px;
+    position: sticky;
+}
+
+.col-md-3 {
+    min-width: 240px;
+    max-width: 240px;
+    flex: 0 0 240px;
+}

@@ -1,0 +1,66 @@
+<div id="container" *ngIf="!viewDetail" style="margin-top: 25px; margin-left: 50px; margin-right: 15px; min-width: 530px;">
+    <p style="font-size: 18px; font-weight: 600; margin: 5px; text-align: center;"> HISTORIAL DE COMPRAS</p>
+
+    <div style="width: 100%; border-bottom: 1px solid rgb(214, 212, 212); margin-bottom: 5px;"></div>
+
+    <div class="row d-flex mt-3 mb-1">
+        <div class="col-md-6 d-flex align-items-center">
+            <p class="mbs-0" style="font-size: 14px; font-weight: 600;">Título:</p>
+            <div class="input-group">
+                <input [(ngModel)]="tituloLibro" (keydown)="onKeydown($event)" type="search" id="buscador-inventario" class="form-control" />
+                <button (click)="getOrders()" id="btn-filter-inventory" type="button" class="btn">
+                    <i class="bi bi-search icon-large"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-6 d-flex align-items-center">
+            <p class="mb-0 me-2" style="font-size: 14px; font-weight: 600;">Fecha Publicación:</p>
+            <select [(ngModel)]="sortAsc" (change)="sortOrdenes()" class="form-select" id="select-genero-inventario">
+                <option [ngValue]="false">Recientes</option>
+                <option [ngValue]="true">Antiguos</option>
+            </select>
+        </div>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ORDER ID</th>
+                <th scope="col">ESTADO</th>
+                <th scope="col">FECHA</th>
+                <th scope="col">TOTAL</th>
+                <th scope="col">DETALLES</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let orden of paginatedOrders">
+                <td scope="row" style="font-weight: 600;">{{ orden.id }}</td>
+                <td><p style="color: #2DB224;">ENTREGADO</p></td>
+                <td>{{ formatDate(orden.fecha) }}</td>
+                <td>
+                    COP ${{ formatTotal(orden.total) }} ({{ orden.detalleVenta.length }} {{ orden.detalleVenta.length === 1 ? 'Libro' : 'Libros' }})
+                </td>
+                <td><a (click)='showOrderDetail(orden)'>Ver Detalles <i class="bi bi-arrow-right"></i></a></td>
+            </tr>
+            <tr *ngIf="isLoading">
+                <td colspan="6" style="text-align: center;">
+                  <div class="d-flex align-items-center justify-content-center">
+                    <i id="spinning-loading-arrow" class="bi bi-arrow-repeat spin"></i>
+                    <span class="ms-2">Cargando Ordenes...</span>
+                  </div>
+                </td>
+            </tr>
+            <tr *ngIf="!isLoading && ordenes.length == 0">
+                <td colspan="6" style="text-align: center">No se encontrarón ordenes</td>
+            </tr>
+        </tbody>
+    </table>
+    <ngb-pagination class="d-flex justify-content-center paginator" [(page)]="currentPage" [pageSize]="itemsPerPage"
+        [collectionSize]="ordenes.length" (pageChange)="onPageChange($event)" aria-label="Default pagination">
+    </ngb-pagination>
+</div>
+
+<div *ngIf="viewDetail">
+    <app-detalle-orden [orden]="selectedOrder" (closeDetail)="viewDetail = false"></app-detalle-orden>
+</div>

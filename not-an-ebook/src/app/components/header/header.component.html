@@ -1,0 +1,81 @@
+<header class="header-basic">
+    <div class="firstRow">
+        <div id="left-column">
+            <p class="header-text">Bienvenido a Not An Ebook un eCommerce online.</p>
+        </div>
+
+        <div id="right-column">
+            <p class="header-text" style="padding-right: 5px">Siguenos en:</p>
+            <button class="btn rounded-0 border-0" aria-label="Twitter">
+                <i class="bi bi-twitter" style="height: 16px;"></i>
+            </button>
+
+            <button class="btn rounded-0 border-0" aria-label="Facebook">
+                <i class="bi bi-facebook" style="height: 16px;"></i>
+            </button>
+
+            <button class="btn rounded-0 border-0" aria-label="YouTube">
+                <i class="bi bi-youtube" style="height: 16px;"></i>
+            </button>
+
+            <button class="btn rounded-0 border-0" style="border-right: 10px;" aria-label="Instagram">
+                <i class="bi bi-instagram" style="height: 16px"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="horizontal-line"></div>
+
+    <div class="secondRow">
+        <div id="left-column-2r" style="cursor: pointer;" (click)="redirect('home')">
+            <img class="img-fluid" type="image/x-png" src="icon.png" alt="Ecommerce Icon" width="60px">
+            <h4>Not An Ebook</h4>
+        </div>
+
+        <div class="buscador">
+            <div class="input-group">
+                <input type="search" id="barra-busqueda" [(ngModel)]="tituloLibro" (keydown)="onKeydown($event)" class="form-control" placeholder="¡Busca tu libro aquí!"
+                    aria-label="Search" aria-describedby="search-addon" />
+                <button id="btn-buscar-libro" (click)="onSearch()" type="button" class="btn"> <i class="bi bi-search icon-large"></i>
+                </button>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg" style="margin-right: 25px; width: fit-content;">
+            <button (click)="isNavbarCollapsed = !isNavbarCollapsed" class="navbar-toggler" type="button"
+                style="border-color: white;" aria-controls="navbarToggler" [attr.aria-expanded]="!isNavbarCollapsed"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="color: white;"></span>
+            </button>
+
+            <div [ngbCollapse]="isNavbarCollapsed" class="navbar-collapse justify-content-center" id="navbarToggler">
+                <ul class="navbar-nav justify-content-center" style="width: fit-content;">
+
+                    <li class="nav-item nav-item-header d-flex">
+                        <button (click)="redirect('perfil')" class="btn nav-link" aria-label="person" id="btn-profile">
+                            <i class="bi bi-person icon-large"></i>
+                        </button>
+                    </li>
+
+                    <li class="nav-item nav-item-header">
+                        <button (click)="redirect('carrito')" class="btn nav-link" aria-label="cart" id="btn-shopping-cart">
+                            <i class="bi bi-cart icon-large"></i>
+                        </button>
+                    </li>
+
+                    <li class="nav-item nav-item-header">
+                        <button (click)="redirect('historial')" class="btn nav-link" aria-label="truck" id="btn-order-history">
+                            <i class="bi bi-truck icon-large"></i>
+                        </button>
+                    </li>
+
+                    <li *ngIf="this.rol == '1'" class="nav-item nav-item-header" id="inv-nav-container">
+                        <button (click)="redirect('admin')" class="btn nav-link" aria-label="inventory" id="btn-inventory">
+                            <i class="bi bi-shop icon-large"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>

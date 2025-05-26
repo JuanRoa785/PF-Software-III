@@ -1,0 +1,158 @@
+<div class="content">
+    <div class="card" style="margin: 25px 0px;">
+        <div id="register-form" style="padding: 10px;">
+            <div class="mb-1">
+                <p style="font-size: 18px; font-weight: 600; margin: 5px; text-align: center;">GESTIONAR LIBRO</p>
+            </div>
+
+            <div class="mb-3">
+                <p class="form-label">Id</p>
+                <input [(ngModel)]="libro.id" type="number" class="form-control" id="libro-id" name="bookId" autocomplete="Default ID"
+                    placeholder="N.A" disabled>
+            </div>
+
+            <div class="mb-3 row">
+                <div class="col">
+                    <p class="mb-0 me-2">Género Literario</p>
+                    <select [(ngModel)]="libro.generoLiterarioId" class="form-select" id="libro-genero" name="libro-genero">
+                         <option *ngFor="let genero of generos" [value]="genero.id" class="genreSelectOptions">
+                            {{ genero.nombre }}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="col">
+                    <p class="mb-0 me-2">Idioma</p>
+                    <select [(ngModel)]="libro.idioma" class="form-select" id="libro-idioma" name="libro-idioma">
+                        <option value="Español">Español</option>
+                        <option value="Ingles">Ingles</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <p class="form-label">Titulo</p>
+                <input [(ngModel)]="libro.nombre" type="text" class="form-control" id="libro-nombre" name="bookName"
+                    placeholder="Harry Potter y la Piedra Filosofal">
+            </div>
+
+            <div class="mb-3">
+                <label for="libro-sinopsis" class="form-label">Sinopsis</label>
+                <textarea [(ngModel)]="libro.sinopsis" class="form-control" id="libro-sinopsis" name="bookSynopsis"
+                    rows="4" placeholder="Sinopsis aquí:"></textarea>
+            </div>
+
+            <!--<div class="mb-3">
+                <p class="form-label">URL Portada</p>
+                <textarea [(ngModel)]="libro.portada" class="form-control" id="libro-portada" name="bookImage" rows="2"
+                    placeholder="portada aquí:"></textarea>
+            </div>-->
+
+            <div class="mb-3 d-flex align-items-center gap-3">
+                <!-- Imagen seleccionada -->
+                <img *ngIf="tempUrlnewImg == '' && libro.portada" [src]="libro.portada" alt="Previsualización de portada" 
+                    width="100" class="img-thumbnail"
+                />
+
+                <img *ngIf="tempUrlnewImg != ''" [src]="tempUrlnewImg" alt="Previsualización de portada" 
+                    width="100" class="img-thumbnail"
+                />
+
+                <!-- Input de archivo -->
+                <div>
+                    <p class="form-label">Portada</p>
+                    <label for="portada" class="btn save-btn">
+                        Seleccionar imagen
+                    </label>
+                    <input (change)="onFileChange($event)" type="file" id="portada" name="portada" 
+                    accept="image/png, image/jpeg, image/webp, image/jpg" hidden
+                    />
+                </div>
+            </div>
+
+
+            <div class="mb-3">
+                <p class="form-label">Precio</p>
+                <input [(ngModel)]="libro.precio" type="number" class="form-control" id="libro-precio"
+                    placeholder="50000" name="bookPrice">
+            </div>
+
+            <div class="mb-3">
+                <p class="form-label">Impuesto</p>
+                <input [(ngModel)]="libro.impuesto" type="number" class="form-control" id="libro-impuesto"
+                    placeholder="0.1" name="bookTax">
+            </div>
+
+            <div class="mb-3">
+                <p class="form-label">Stock Inicial</p>
+                <input [(ngModel)]="libro.stock" type="number" class="form-control" id="libro-stock" placeholder="150"
+                    name="bookStock">
+            </div>
+
+            <div class="mb-3">
+                <p class="form-label">Autor</p>
+                <input [(ngModel)]="libro.autor" type="text" class="form-control" id="libro-autor" name="bookAuthor"
+                    placeholder="J. K. Rowling">
+            </div>
+
+            <div class="mb-3 row">
+                <div class="col">
+                    <p class="mb-0 me-2">Editorial</p>
+                    <input list="editoriales-list" [(ngModel)]="libro.editorial" class="form-control" 
+                    name="libro-editorial" id="libro-editorial" placeholder="Escribe o selecciona una editorial" 
+                    autocomplete="off"/>
+
+                    <datalist id="editoriales-list">
+                        <option *ngFor="let editorial of editoriales" [value]="editorial"></option>
+                    </datalist>
+                </div>
+
+                <div class="col">
+                    <p class="mb-0 me-2">Edicion</p>
+                    <select [(ngModel)]="libro.edicion" class="form-select" id="libro-edicion">
+                        <option value="Tapa Dura">Tapa Dura</option>
+                        <option value="Tapa Blanda">Tapa Blanda</option>
+                        <option value="Coleccionista">Coleccionista</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <p class="form-label">Fecha Publicación</p>
+                <div class="input-group">
+                    <input [(ngModel)]="libro.fecha_publicacion" id="libro-fecha" type="date" class="form-control"
+                        placeholder="yyyy-mm-dd" name="input-publicacion" />
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <p class="form-label">Número de Paginas</p>
+                <input [(ngModel)]="libro.numero_paginas" type="number" class="form-control" id="libro-num-paginas"
+                    placeholder="350" name="bookPages">
+            </div>
+
+            <div class="mb-3">
+                <p class="form-label">Coleccion</p>
+                <input [(ngModel)]="libro.coleccion" type="text" class="form-control" id="libro-coleccion"
+                    name="bookCollection" placeholder="Harry Potter">
+            </div>
+
+            <button (click)="gestionarLibro()" id="btn-actualizar" class="save-btn btn-primary" type="button"
+                style="width: 100%; margin-bottom: 10px;">
+                Guardar Cambios
+            </button>
+
+            <div *ngIf="isLoading" class="d-flex align-items-center justify-content-center">
+                <i id="spinning-loading-arrow" class="bi bi-arrow-repeat spin"></i>
+                <span class="ms-2" style="font-weight: 600;">Cargando...</span>
+            </div>
+
+            <div style="display: flex; justify-content: center; align-items: center; margin-top: 5px;">
+                <p *ngIf="strError.length > 1 " id="error-general"
+                    style="color: red; font-weight: 600; margin-left: 15px; text-align: center;">
+                    {{strError}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

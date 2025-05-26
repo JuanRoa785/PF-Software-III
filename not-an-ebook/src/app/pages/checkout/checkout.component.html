@@ -1,0 +1,42 @@
+<div id="page-content">
+    <div class="col-7" id="BillingInfo">
+        <p style="font-size: 18px; font-weight: 600; margin: 5px; text-align: center;"> Dirección de Envio</p>
+        <div style="width: 100%; border-bottom: 1px solid rgb(214, 212, 212); margin-bottom: 5px;"></div>
+        <p id="card-pais"><b style="font-weight: 600;">Pais: </b>{{direccion.pais}}</p>
+        <p id="card-region"><b style="font-weight: 600;">Region/Estado: </b>{{direccion.region}}</p>
+        <p id="card-ciudad"><b style="font-weight: 600;">Ciudad: </b>{{direccion.ciudad}}</p>
+        <p id="card-codigo-postal"><b style="font-weight: 600;">Codigo Postal: </b>{{direccion.codigo_postal}}</p>
+        <p id="card-direccion"><b style="font-weight: 600;">Dirección: </b>{{direccion.direccion}}</p>
+        <div class="d-flex justify-content-center" style="gap: 20px;">
+            <button (click)="openModalDireccion()" class="profile-button" data-bs-toggle="modal">
+                Editar Dirección
+            </button>
+        </div>
+    </div>
+
+    <div id="subtotal">
+        <p style="font-size: 18px; font-weight: 600; margin: 5px; text-align: center;">Detalle de la Compra</p>
+        <div style="width: 100%; border-bottom: 1px solid rgb(214, 212, 212); margin-bottom: 5px;"></div>
+        <div *ngFor="let detalle of detalleCarrito" class="d-flex" style="align-items: center;">
+            <div style="height: 75px; justify-content: center; display: flex;">
+                <img src="{{detalle.libro.portada}}" alt="product.img"
+                    style="width: 75px; margin: 5px 10px; object-fit: contain;">
+            </div>
+
+            <div style="display: block;">
+                <p style="margin: 0px;">{{ detalle.libro.nombre }}</p>
+                <p style="margin: 0px;">{{detalle.cantidad}} x <b style="color: #2DA5F3; font-weight: 600;">COP
+                        ${{getPrecioImpuesto(detalle.libro)}}</b> (Impuestos incluidos)</p>
+            </div>
+        </div>
+        <div style="width: 100%; border-bottom: 1px solid rgb(214, 212, 212); margin-bottom: 5px; margin-top: 5px;"></div>
+        <p><b style="font-weight: 600;">Sub-Total: </b>COP ${{subTotal}}</p>
+        <p><b style="font-weight: 600;">Envio: </b> Gratis </p>
+        <p><b style="font-weight: 600;">Descuento: </b> COP $0</p>
+        <div style="width: 100%; border-bottom: 1px solid rgb(214, 212, 212); margin-bottom: 5px;"></div>
+        <p style="text-align: center;"> <b style="font-weight: 600;">Total: COP ${{subTotal}}</b></p>
+        <div class="d-flex justify-content-center">
+            <button (click)="openVerifModal()">REALIZAR PEDIDO <i class="bi bi-arrow-right"></i></button>
+        </div>
+    </div>
+</div>

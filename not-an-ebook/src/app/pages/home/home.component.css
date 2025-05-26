@@ -1,0 +1,88 @@
+h5 {
+    font-weight: 600 ;
+    text-align: center;
+    width: 100vw;
+    margin-top: 25px;
+    margin-bottom: 0px;
+    font-size: 26px;
+}
+
+.generosContainer{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card-generos {
+    margin-bottom: 20px;
+    margin-right: 25px;
+}
+
+.card-generos > .card {
+    margin-top: 20px;
+    margin-left: 10px;
+    border-radius: 5px;
+    padding: 0px;
+    width: 150px;
+    height: 225px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-body {
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.card-body > p {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 98vw;
+  flex-wrap: nowrap;
+}
+
+.carousel-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.carousel-arrow {
+  font-size: 5rem;
+  padding: 0px;
+  border: none;
+  background-color: inherit;
+  color: #333;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.carousel-arrow.left {
+  margin: 0px
+}
+
+.carousel-arrow.right {
+  margin: 0px
+}
+
+.row {
+    display: flex; 
+    justify-content: space-evenly; 
+    margin: 8px; 
+    gap: 12px;
+}
+
+@media (max-width:992px) {
+    .card-generos > .card {
+        height: 260px !important;
+    }
+}

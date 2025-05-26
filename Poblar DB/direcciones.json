@@ -1,0 +1,802 @@
+[
+    {
+        "id_usuario": 1,
+        "pais": "Colombia",
+        "region": "Santander",
+        "ciudad": "Bucaramanga",
+        "codigo_postal": "68001",
+        "direccion": "UIS"
+    },
+    {
+        "id_usuario": 2,
+        "pais": "Colombia",
+        "region": "Atlántico",
+        "ciudad": "Soledad",
+        "codigo_postal": "317105",
+        "direccion": "Calle 139 # 94-74"
+    },
+    {
+        "id_usuario": 3,
+        "pais": "Colombia",
+        "region": "Antioquia",
+        "ciudad": "Envigado",
+        "codigo_postal": "203178",
+        "direccion": "Calle 125 # 85-12"
+    },
+    {
+        "id_usuario": 4,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Palmira",
+        "codigo_postal": "298069",
+        "direccion": "Calle 142 # 74-18"
+    },
+    {
+        "id_usuario": 5,
+        "pais": "Colombia",
+        "region": "Bolívar",
+        "ciudad": "Turbaco",
+        "codigo_postal": "477081",
+        "direccion": "Calle 93 # 77-28"
+    },
+    {
+        "id_usuario": 6,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Tuluá",
+        "codigo_postal": "233200",
+        "direccion": "Calle 14 # 46-92"
+    },
+    {
+        "id_usuario": 7,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Tuluá",
+        "codigo_postal": "453596",
+        "direccion": "Calle 99 # 87-37"
+    },
+    {
+        "id_usuario": 8,
+        "pais": "Colombia",
+        "region": "Atlántico",
+        "ciudad": "Soledad",
+        "codigo_postal": "253718",
+        "direccion": "Calle 53 # 68-11"
+    },
+    {
+        "id_usuario": 9,
+        "pais": "Colombia",
+        "region": "Cundinamarca",
+        "ciudad": "Soacha",
+        "codigo_postal": "409075",
+        "direccion": "Calle 56 # 71-79"
+    },
+    {
+        "id_usuario": 10,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Tuluá",
+        "codigo_postal": "410683",
+        "direccion": "Calle 101 # 68-93"
+    },
+    {
+        "id_usuario": 11,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Tuluá",
+        "codigo_postal": "522507",
+        "direccion": "Calle 150 # 9-82"
+    },
+    {
+        "id_usuario": 12,
+        "pais": "Colombia",
+        "region": "Antioquia",
+        "ciudad": "Medellín",
+        "codigo_postal": "179654",
+        "direccion": "Calle 26 # 11-38"
+    },
+    {
+        "id_usuario": 13,
+        "pais": "Colombia",
+        "region": "Antioquia",
+        "ciudad": "Itagüí",
+        "codigo_postal": "436232",
+        "direccion": "Calle 137 # 57-38"
+    },
+    {
+        "id_usuario": 14,
+        "pais": "Colombia",
+        "region": "Santander",
+        "ciudad": "Bucaramanga",
+        "codigo_postal": "201796",
+        "direccion": "Calle 95 # 30-15"
+    },
+    {
+        "id_usuario": 15,
+        "pais": "Colombia",
+        "region": "Antioquia",
+        "ciudad": "Envigado",
+        "codigo_postal": "292788",
+        "direccion": "Calle 74 # 84-94"
+    },
+    {
+        "id_usuario": 16,
+        "pais": "Colombia",
+        "region": "Atlántico",
+        "ciudad": "Barranquilla",
+        "codigo_postal": "571904",
+        "direccion": "Calle 80 # 54-42"
+    },
+    {
+        "id_usuario": 17,
+        "pais": "Colombia",
+        "region": "Santander",
+        "ciudad": "Floridablanca",
+        "codigo_postal": "231139",
+        "direccion": "Calle 74 # 77-93"
+    },
+    {
+        "id_usuario": 18,
+        "pais": "Colombia",
+        "region": "Cundinamarca",
+        "ciudad": "Bogotá",
+        "codigo_postal": "427775",
+        "direccion": "Calle 57 # 92-56"
+    },
+    {
+        "id_usuario": 19,
+        "pais": "Colombia",
+        "region": "Bolívar",
+        "ciudad": "Cartagena",
+        "codigo_postal": "521417",
+        "direccion": "Calle 115 # 6-66"
+    },
+    {
+        "id_usuario": 20,
+        "pais": "Colombia",
+        "region": "Cundinamarca",
+        "ciudad": "Bogotá",
+        "codigo_postal": "448442",
+        "direccion": "Calle 138 # 93-27"
+    },
+    {
+        "id_usuario": 21,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Cali",
+        "codigo_postal": "303058",
+        "direccion": "Calle 70 # 80-9"
+    },
+    {
+        "id_usuario": 22,
+        "pais": "Colombia",
+        "region": "Cundinamarca",
+        "ciudad": "Bogotá",
+        "codigo_postal": "554964",
+        "direccion": "Calle 137 # 49-47"
+    },
+    {
+        "id_usuario": 23,
+        "pais": "Colombia",
+        "region": "Cundinamarca",
+        "ciudad": "Chía",
+        "codigo_postal": "373212",
+        "direccion": "Calle 53 # 10-82"
+    },
+    {
+        "id_usuario": 24,
+        "pais": "Colombia",
+        "region": "Antioquia",
+        "ciudad": "Itagüí",
+        "codigo_postal": "484336",
+        "direccion": "Calle 107 # 32-21"
+    },
+    {
+        "id_usuario": 25,
+        "pais": "Colombia",
+        "region": "Antioquia",
+        "ciudad": "Itagüí",
+        "codigo_postal": "270014",
+        "direccion": "Calle 60 # 88-44"
+    },
+    {
+        "id_usuario": 26,
+        "pais": "Colombia",
+        "region": "Bolívar",
+        "ciudad": "Turbaco",
+        "codigo_postal": "193506",
+        "direccion": "Calle 73 # 17-90"
+    },
+    {
+        "id_usuario": 27,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Cali",
+        "codigo_postal": "562188",
+        "direccion": "Calle 46 # 93-85"
+    },
+    {
+        "id_usuario": 28,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Palmira",
+        "codigo_postal": "280457",
+        "direccion": "Calle 149 # 60-23"
+    },
+    {
+        "id_usuario": 29,
+        "pais": "Colombia",
+        "region": "Cundinamarca",
+        "ciudad": "Soacha",
+        "codigo_postal": "576202",
+        "direccion": "Calle 27 # 12-48"
+    },
+    {
+        "id_usuario": 30,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Tuluá",
+        "codigo_postal": "343983",
+        "direccion": "Calle 77 # 78-40"
+    },
+    {
+        "id_usuario": 31,
+        "pais": "Colombia",
+        "region": "Bolívar",
+        "ciudad": "Arjona",
+        "codigo_postal": "296678",
+        "direccion": "Calle 47 # 25-4"
+    },
+    {
+        "id_usuario": 32,
+        "pais": "Colombia",
+        "region": "Cundinamarca",
+        "ciudad": "Chía",
+        "codigo_postal": "413112",
+        "direccion": "Calle 70 # 20-4"
+    },
+    {
+        "id_usuario": 33,
+        "pais": "Colombia",
+        "region": "Cundinamarca",
+        "ciudad": "Soacha",
+        "codigo_postal": "267608",
+        "direccion": "Calle 139 # 93-62"
+    },
+    {
+        "id_usuario": 34,
+        "pais": "Colombia",
+        "region": "Bolívar",
+        "ciudad": "Cartagena",
+        "codigo_postal": "525785",
+        "direccion": "Calle 122 # 71-81"
+    },
+    {
+        "id_usuario": 35,
+        "pais": "Colombia",
+        "region": "Atlántico",
+        "ciudad": "Malambo",
+        "codigo_postal": "585169",
+        "direccion": "Calle 82 # 87-69"
+    },
+    {
+        "id_usuario": 36,
+        "pais": "Colombia",
+        "region": "Bolívar",
+        "ciudad": "Arjona",
+        "codigo_postal": "358629",
+        "direccion": "Calle 25 # 8-48"
+    },
+    {
+        "id_usuario": 37,
+        "pais": "Colombia",
+        "region": "Bolívar",
+        "ciudad": "Arjona",
+        "codigo_postal": "478049",
+        "direccion": "Calle 7 # 21-33"
+    },
+    {
+        "id_usuario": 38,
+        "pais": "Colombia",
+        "region": "Bolívar",
+        "ciudad": "Arjona",
+        "codigo_postal": "179380",
+        "direccion": "Calle 14 # 46-45"
+    },
+    {
+        "id_usuario": 39,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Cali",
+        "codigo_postal": "519844",
+        "direccion": "Calle 127 # 2-44"
+    },
+    {
+        "id_usuario": 40,
+        "pais": "Colombia",
+        "region": "Cundinamarca",
+        "ciudad": "Bogotá",
+        "codigo_postal": "459063",
+        "direccion": "Calle 54 # 91-88"
+    },
+    {
+        "id_usuario": 41,
+        "pais": "Colombia",
+        "region": "Santander",
+        "ciudad": "Bucaramanga",
+        "codigo_postal": "222148",
+        "direccion": "Calle 92 # 13-28"
+    },
+    {
+        "id_usuario": 42,
+        "pais": "Colombia",
+        "region": "Atlántico",
+        "ciudad": "Barranquilla",
+        "codigo_postal": "228765",
+        "direccion": "Calle 64 # 20-64"
+    },
+    {
+        "id_usuario": 43,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Palmira",
+        "codigo_postal": "257398",
+        "direccion": "Calle 117 # 57-27"
+    },
+    {
+        "id_usuario": 44,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Palmira",
+        "codigo_postal": "300096",
+        "direccion": "Calle 116 # 19-30"
+    },
+    {
+        "id_usuario": 45,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Palmira",
+        "codigo_postal": "565615",
+        "direccion": "Calle 42 # 49-86"
+    },
+    {
+        "id_usuario": 46,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Palmira",
+        "codigo_postal": "255291",
+        "direccion": "Calle 112 # 89-61"
+    },
+    {
+        "id_usuario": 47,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Tuluá",
+        "codigo_postal": "117591",
+        "direccion": "Calle 85 # 33-21"
+    },
+    {
+        "id_usuario": 48,
+        "pais": "Colombia",
+        "region": "Antioquia",
+        "ciudad": "Itagüí",
+        "codigo_postal": "241161",
+        "direccion": "Calle 101 # 74-18"
+    },
+    {
+        "id_usuario": 49,
+        "pais": "Colombia",
+        "region": "Cundinamarca",
+        "ciudad": "Chía",
+        "codigo_postal": "441391",
+        "direccion": "Calle 52 # 85-76"
+    },
+    {
+        "id_usuario": 50,
+        "pais": "Colombia",
+        "region": "Antioquia",
+        "ciudad": "Itagüí",
+        "codigo_postal": "563390",
+        "direccion": "Calle 126 # 43-26"
+    },
+    {
+        "id_usuario": 51,
+        "pais": "Colombia",
+        "region": "Antioquia",
+        "ciudad": "Itagüí",
+        "codigo_postal": "526729",
+        "direccion": "Calle 31 # 84-33"
+    },
+    {
+        "id_usuario": 52,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Tuluá",
+        "codigo_postal": "224267",
+        "direccion": "Calle 83 # 43-72"
+    },
+    {
+        "id_usuario": 53,
+        "pais": "Colombia",
+        "region": "Santander",
+        "ciudad": "Floridablanca",
+        "codigo_postal": "207165",
+        "direccion": "Calle 83 # 55-8"
+    },
+    {
+        "id_usuario": 54,
+        "pais": "Colombia",
+        "region": "Atlántico",
+        "ciudad": "Soledad",
+        "codigo_postal": "436767",
+        "direccion": "Calle 85 # 49-74"
+    },
+    {
+        "id_usuario": 55,
+        "pais": "Colombia",
+        "region": "Antioquia",
+        "ciudad": "Medellín",
+        "codigo_postal": "391517",
+        "direccion": "Calle 82 # 60-46"
+    },
+    {
+        "id_usuario": 56,
+        "pais": "Colombia",
+        "region": "Santander",
+        "ciudad": "Bucaramanga",
+        "codigo_postal": "313707",
+        "direccion": "Calle 1 # 84-76"
+    },
+    {
+        "id_usuario": 57,
+        "pais": "Colombia",
+        "region": "Atlántico",
+        "ciudad": "Barranquilla",
+        "codigo_postal": "454386",
+        "direccion": "Calle 133 # 1-33"
+    },
+    {
+        "id_usuario": 58,
+        "pais": "Colombia",
+        "region": "Bolívar",
+        "ciudad": "Cartagena",
+        "codigo_postal": "506214",
+        "direccion": "Calle 78 # 7-96"
+    },
+    {
+        "id_usuario": 59,
+        "pais": "Colombia",
+        "region": "Atlántico",
+        "ciudad": "Barranquilla",
+        "codigo_postal": "508603",
+        "direccion": "Calle 133 # 7-32"
+    },
+    {
+        "id_usuario": 60,
+        "pais": "Colombia",
+        "region": "Cundinamarca",
+        "ciudad": "Bogotá",
+        "codigo_postal": "151097",
+        "direccion": "Calle 46 # 84-82"
+    },
+    {
+        "id_usuario": 61,
+        "pais": "Colombia",
+        "region": "Santander",
+        "ciudad": "Giron",
+        "codigo_postal": "202917",
+        "direccion": "Calle 65 # 74-82"
+    },
+    {
+        "id_usuario": 62,
+        "pais": "Colombia",
+        "region": "Cundinamarca",
+        "ciudad": "Soacha",
+        "codigo_postal": "534562",
+        "direccion": "Calle 120 # 18-33"
+    },
+    {
+        "id_usuario": 63,
+        "pais": "Colombia",
+        "region": "Bolívar",
+        "ciudad": "Arjona",
+        "codigo_postal": "157338",
+        "direccion": "Calle 39 # 42-73"
+    },
+    {
+        "id_usuario": 64,
+        "pais": "Colombia",
+        "region": "Santander",
+        "ciudad": "Bucaramanga",
+        "codigo_postal": "136302",
+        "direccion": "Calle 116 # 13-73"
+    },
+    {
+        "id_usuario": 65,
+        "pais": "Colombia",
+        "region": "Antioquia",
+        "ciudad": "Itagüí",
+        "codigo_postal": "271461",
+        "direccion": "Calle 136 # 54-23"
+    },
+    {
+        "id_usuario": 66,
+        "pais": "Colombia",
+        "region": "Santander",
+        "ciudad": "Bucaramanga",
+        "codigo_postal": "237202",
+        "direccion": "Calle 110 # 36-95"
+    },
+    {
+        "id_usuario": 67,
+        "pais": "Colombia",
+        "region": "Atlántico",
+        "ciudad": "Barranquilla",
+        "codigo_postal": "164405",
+        "direccion": "Calle 41 # 54-47"
+    },
+    {
+        "id_usuario": 68,
+        "pais": "Colombia",
+        "region": "Bolívar",
+        "ciudad": "Turbaco",
+        "codigo_postal": "305197",
+        "direccion": "Calle 25 # 2-87"
+    },
+    {
+        "id_usuario": 69,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Palmira",
+        "codigo_postal": "543032",
+        "direccion": "Calle 115 # 42-36"
+    },
+    {
+        "id_usuario": 70,
+        "pais": "Colombia",
+        "region": "Antioquia",
+        "ciudad": "Medellín",
+        "codigo_postal": "255356",
+        "direccion": "Calle 59 # 28-36"
+    },
+    {
+        "id_usuario": 71,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Cali",
+        "codigo_postal": "465440",
+        "direccion": "Calle 24 # 43-12"
+    },
+    {
+        "id_usuario": 72,
+        "pais": "Colombia",
+        "region": "Bolívar",
+        "ciudad": "Arjona",
+        "codigo_postal": "169326",
+        "direccion": "Calle 89 # 84-2"
+    },
+    {
+        "id_usuario": 73,
+        "pais": "Colombia",
+        "region": "Atlántico",
+        "ciudad": "Malambo",
+        "codigo_postal": "411168",
+        "direccion": "Calle 34 # 39-9"
+    },
+    {
+        "id_usuario": 74,
+        "pais": "Colombia",
+        "region": "Bolívar",
+        "ciudad": "Cartagena",
+        "codigo_postal": "178140",
+        "direccion": "Calle 89 # 60-52"
+    },
+    {
+        "id_usuario": 75,
+        "pais": "Colombia",
+        "region": "Antioquia",
+        "ciudad": "Itagüí",
+        "codigo_postal": "532289",
+        "direccion": "Calle 13 # 94-79"
+    },
+    {
+        "id_usuario": 76,
+        "pais": "Colombia",
+        "region": "Antioquia",
+        "ciudad": "Envigado",
+        "codigo_postal": "442922",
+        "direccion": "Calle 91 # 46-91"
+    },
+    {
+        "id_usuario": 77,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Palmira",
+        "codigo_postal": "220872",
+        "direccion": "Calle 24 # 6-1"
+    },
+    {
+        "id_usuario": 78,
+        "pais": "Colombia",
+        "region": "Santander",
+        "ciudad": "Giron",
+        "codigo_postal": "523572",
+        "direccion": "Calle 40 # 8-37"
+    },
+    {
+        "id_usuario": 79,
+        "pais": "Colombia",
+        "region": "Cundinamarca",
+        "ciudad": "Bogotá",
+        "codigo_postal": "490052",
+        "direccion": "Calle 137 # 71-51"
+    },
+    {
+        "id_usuario": 80,
+        "pais": "Colombia",
+        "region": "Cundinamarca",
+        "ciudad": "Chía",
+        "codigo_postal": "253205",
+        "direccion": "Calle 59 # 49-22"
+    },
+    {
+        "id_usuario": 81,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Cali",
+        "codigo_postal": "341892",
+        "direccion": "Calle 147 # 28-39"
+    },
+    {
+        "id_usuario": 82,
+        "pais": "Colombia",
+        "region": "Cundinamarca",
+        "ciudad": "Bogotá",
+        "codigo_postal": "549760",
+        "direccion": "Calle 64 # 18-5"
+    },
+    {
+        "id_usuario": 83,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Cali",
+        "codigo_postal": "219173",
+        "direccion": "Calle 25 # 4-54"
+    },
+    {
+        "id_usuario": 84,
+        "pais": "Colombia",
+        "region": "Cundinamarca",
+        "ciudad": "Bogotá",
+        "codigo_postal": "294109",
+        "direccion": "Calle 49 # 91-1"
+    },
+    {
+        "id_usuario": 85,
+        "pais": "Colombia",
+        "region": "Antioquia",
+        "ciudad": "Medellín",
+        "codigo_postal": "208615",
+        "direccion": "Calle 17 # 37-8"
+    },
+    {
+        "id_usuario": 86,
+        "pais": "Colombia",
+        "region": "Cundinamarca",
+        "ciudad": "Chía",
+        "codigo_postal": "332134",
+        "direccion": "Calle 72 # 86-64"
+    },
+    {
+        "id_usuario": 87,
+        "pais": "Colombia",
+        "region": "Santander",
+        "ciudad": "Bucaramanga",
+        "codigo_postal": "173853",
+        "direccion": "Calle 32 # 76-38"
+    },
+    {
+        "id_usuario": 88,
+        "pais": "Colombia",
+        "region": "Santander",
+        "ciudad": "Bucaramanga",
+        "codigo_postal": "242845",
+        "direccion": "Calle 41 # 48-49"
+    },
+    {
+        "id_usuario": 89,
+        "pais": "Colombia",
+        "region": "Cundinamarca",
+        "ciudad": "Soacha",
+        "codigo_postal": "436324",
+        "direccion": "Calle 71 # 11-80"
+    },
+    {
+        "id_usuario": 90,
+        "pais": "Colombia",
+        "region": "Atlántico",
+        "ciudad": "Soledad",
+        "codigo_postal": "332904",
+        "direccion": "Calle 60 # 4-93"
+    },
+    {
+        "id_usuario": 91,
+        "pais": "Colombia",
+        "region": "Atlántico",
+        "ciudad": "Malambo",
+        "codigo_postal": "552362",
+        "direccion": "Calle 78 # 96-76"
+    },
+    {
+        "id_usuario": 92,
+        "pais": "Colombia",
+        "region": "Cundinamarca",
+        "ciudad": "Chía",
+        "codigo_postal": "182956",
+        "direccion": "Calle 75 # 72-45"
+    },
+    {
+        "id_usuario": 93,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Cali",
+        "codigo_postal": "446694",
+        "direccion": "Calle 101 # 35-94"
+    },
+    {
+        "id_usuario": 94,
+        "pais": "Colombia",
+        "region": "Antioquia",
+        "ciudad": "Itagüí",
+        "codigo_postal": "505060",
+        "direccion": "Calle 22 # 49-12"
+    },
+    {
+        "id_usuario": 95,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Tuluá",
+        "codigo_postal": "483876",
+        "direccion": "Calle 72 # 13-80"
+    },
+    {
+        "id_usuario": 96,
+        "pais": "Colombia",
+        "region": "Antioquia",
+        "ciudad": "Envigado",
+        "codigo_postal": "452540",
+        "direccion": "Calle 67 # 25-72"
+    },
+    {
+        "id_usuario": 97,
+        "pais": "Colombia",
+        "region": "Atlántico",
+        "ciudad": "Malambo",
+        "codigo_postal": "244174",
+        "direccion": "Calle 5 # 85-90"
+    },
+    {
+        "id_usuario": 98,
+        "pais": "Colombia",
+        "region": "Cundinamarca",
+        "ciudad": "Bogotá",
+        "codigo_postal": "489349",
+        "direccion": "Calle 70 # 5-7"
+    },
+    {
+        "id_usuario": 99,
+        "pais": "Colombia",
+        "region": "Valle del Cauca",
+        "ciudad": "Cali",
+        "codigo_postal": "255111",
+        "direccion": "Calle 28 # 28-1"
+    },
+    {
+        "id_usuario": 100,
+        "pais": "Colombia",
+        "region": "Cundinamarca",
+        "ciudad": "Soacha",
+        "codigo_postal": "522910",
+        "direccion": "Calle 115 # 26-76"
+    }
+]

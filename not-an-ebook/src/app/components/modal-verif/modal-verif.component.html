@@ -1,0 +1,21 @@
+<div class="modal-content">
+    <div class="modal-header d-flex justify-content-between align-items-center">
+        <h5 class="modal-title" id="titleModalLabel">
+            <b style="font-weight: 600;">{{modal.titulo}}</b>
+        </h5>
+        <button *ngIf="!modal.notificacion" (click)="closeModal()" type="button" class="btn btn-danger">X</button>
+    </div>
+
+    <div class="modal-body">
+        <div style="display: flex; justify-content: center; align-items: center; margin-top: 5px;">
+            <p [innerHTML]="modal.mensaje" class="mt-1" style="color: black; font-weight: 600; text-align: center;">
+            </p>
+        </div>
+
+        <div class="d-flex justify-content-center" style="width: 100%;">
+            <button (click)="ejecutarTarea()" type="button" class="btn btn-success"
+                style="font-weight: 600;">¡Aceptar!
+            </button>
+        </div>
+    </div>
+</div>
