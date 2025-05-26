@@ -31,10 +31,10 @@ ENV CLOUD_API_KEY=SECRET_VALUE_HERE
 ENV CLOUD_API_SECRET=SECRET_VALUE_HERE
 
 # Copia el jar ejecutable de la imagen auxiliar alias mavn
-COPY  --from=maven /usr/local/app/target/tallerRabbitMQ-0.0.1-SNAPSHOT.jar /usr/share/backJava.jar
+COPY  --from=maven /usr/local/app/target/Biblioteca-0.0.1-SNAPSHOT.jar /usr/share/biblioteca.jar
 
 # Lanza el ejecutable usando java
-CMD ["java", "-jar", "/usr/share/backJava.jar"]
+CMD ["java", "-jar", "/usr/share/biblioteca.jar"]
 
 # Expone el puerto 8081
 EXPOSE 8081
