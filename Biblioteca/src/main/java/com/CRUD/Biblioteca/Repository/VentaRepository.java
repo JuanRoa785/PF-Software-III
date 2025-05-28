@@ -57,6 +57,7 @@ public interface VentaRepository extends JpaRepository<Venta, Integer> {
            WHERE  (
              UPPER(v.usuario.nombres) LIKE %:cliente%
              OR UPPER(v.usuario.apellidos) LIKE %:cliente%
+             OR UPPER(CONCAT(v.usuario.nombres, ' ', v.usuario.apellidos)) LIKE %:cliente%
            )
              AND  v.fecha BETWEEN :fechaInferior AND :fechaSuperior
            ORDER  BY v.total DESC
@@ -71,6 +72,7 @@ public interface VentaRepository extends JpaRepository<Venta, Integer> {
            WHERE  (
              UPPER(v.usuario.nombres) LIKE %:cliente%
              OR UPPER(v.usuario.apellidos) LIKE %:cliente%
+             OR UPPER(CONCAT(v.usuario.nombres, ' ', v.usuario.apellidos)) LIKE %:cliente%
            )
              AND  v.fecha BETWEEN :fechaInferior AND :fechaSuperior
            ORDER  BY v.total ASC
