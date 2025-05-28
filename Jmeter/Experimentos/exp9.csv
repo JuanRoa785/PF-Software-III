@@ -1,0 +1,3 @@
+Label,# Samples,Average,Min,Max,Std. Dev.,Error %,Throughput,Received KB/sec,Sent KB/sec,Avg. Bytes
+Reporte Individual,700,32753,3071,45038,7120.14,62.571%,4.95673,10237.23,1.04,2114884.1
+TOTAL,700,32753,3071,45038,7120.14,62.571%,4.95673,10237.23,1.04,2114884.1
