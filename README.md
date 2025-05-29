@@ -1,7 +1,15 @@
 # **Proyecto Final Ingeniería Software III**
 
+### 👥 Integrantes
 *   **Kevin Dannie Guzmán Duran**
 *   **Juan Diego Roa Porras**
+
+### 📄 Recursos del Análisis
+
+- 📘 [Notebook para el Análisis (Jupyter)](https://github.com/JuanRoa785/PF-Software-III/blob/main/Analisis_Proyecto_Final.ipynb)
+- 📄 [Notebook exportado como PDF](https://github.com/JuanRoa785/PF-Software-III/blob/main/Analisis_Proyecto_Final.pdf)
+
+---
 
 # 📌 **Introducción**
 
@@ -224,3 +232,9 @@ Y su configuración equivalente en JMeter se muestra así:
 </p>
 
 Para estas pruebas, se dejó el parámetro cliente como cadena vacía, se fijó el **límite inferior** en el 1 de enero de 2020 y el **límite superior** en la fecha actual. De este modo, se garantiza que se consulten las **1500** ventas registradas, asegurando así que la carga generada por el endpoint sea significativa.
+
+---
+
+### Exportar el Notebook como PDF
+
+- 📤 [Cómo exportar notebooks como PDF (YouTube)](https://youtu.be/-Ti9Mm21uVc)
